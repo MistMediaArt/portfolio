@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME // TERMINAL PORTFOLIO</title>
+    
+    <!-- Preload critical fonts to prevent FOIT/FOUT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <header class="terminal-header">
+        <div class="header-logo">VFX REEL</div>
+        <nav class="terminal-nav" id="category-filters">
+            <!-- Filters will be injected here -->
+        </nav>
+    </header>
+
+    <nav id="sub-filters" class="sub-nav" style="display: none;">
+        <!-- Sub-filters injected here -->
+    </nav>
+
+    <!-- Decorative brutalist grid background -->
+    <div class="bg-grid-overlay"></div>
+
+    <main id="terminal-root">
+        <!-- JS will inject project nodes here -->
+    </main>
+
+    <!-- BOOT SEQUENCE OVERLAY -->
+    <div id="boot-sequence">
+        <div class="terminal-container">
+            <div id="boot-text"></div>
+            <span class="blinking-cursor">_</span>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

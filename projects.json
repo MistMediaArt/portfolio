@@ -1,0 +1,326 @@
+{
+  "sections": ["ai", "motion_graphics", "music", "apps", "about"],
+  "projects": [
+    {
+      "id": "PRJ-001-DELIVERY",
+      "section": "ai",
+      "sub_category": "cinematic",
+      "title": "DELIVERY // TRANSCEND",
+      "client": "Transcend",
+      "status": "DEPLOYED",
+      "type": "Commercial",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://www.youtube.com/embed/9pdyR_LHwk4"
+      },
+      "metadata": {
+        "render_time": "14.2MS",
+        "nodes_active": 4502
+      }
+    },
+    {
+      "id": "PRJ-002-MANIFEST",
+      "section": "ai",
+      "sub_category": "cinematic",
+      "title": "MIST // МАНИФЕСТ",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Music Video",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://www.youtube.com/embed/ElhU6_Sdfco"
+      },
+      "metadata": {
+        "render_time": "0.002MS",
+        "nodes_active": 14072
+      }
+    },
+    {
+      "id": "PRJ-003-LIDAR",
+      "section": "ai",
+      "sub_category": "cinematic",
+      "title": "MIST x SV4AI // LiDAR",
+      "client": "Project Mist",
+      "status": "OPERATIONAL",
+      "type": "Cinematic AI",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://www.youtube.com/embed/w6ipNWxQ2e4"
+      },
+      "metadata": {
+        "render_time": "12.4MS",
+        "nodes_active": 8452
+      }
+    },
+    {
+      "id": "PRJ-SM-001",
+      "section": "ai",
+      "sub_category": "social_media",
+      "title": "AI REEL // DECORADO 1",
+      "client": "Decorado",
+      "status": "DELIVERED",
+      "type": "Social Media AI",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://player.vimeo.com/video/1188269068"
+      },
+      "metadata": {
+        "platform": "Instagram / TikTok",
+        "resolution": "1080x1920"
+      }
+    },
+    {
+      "id": "PRJ-SM-002",
+      "section": "ai",
+      "sub_category": "social_media",
+      "title": "AI REEL // DECORADO 2",
+      "client": "Decorado",
+      "status": "DELIVERED",
+      "type": "Social Media AI",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://player.vimeo.com/video/1188269190"
+      },
+      "metadata": {
+        "platform": "Instagram / TikTok",
+        "resolution": "1080x1920"
+      }
+    },
+    {
+      "id": "PRJ-SM-003",
+      "section": "ai",
+      "sub_category": "social_media",
+      "title": "AI REEL // ARGAMAN 1",
+      "client": "Argaman X Media",
+      "status": "DELIVERED",
+      "type": "Social Media AI",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://player.vimeo.com/video/1188269319"
+      },
+      "metadata": {
+        "platform": "Instagram / TikTok",
+        "resolution": "1080x1920"
+      }
+    },
+    {
+      "id": "PRJ-SM-004",
+      "section": "ai",
+      "sub_category": "social_media",
+      "title": "AI REEL // ARGAMAN 2",
+      "client": "Argaman X Media",
+      "status": "DELIVERED",
+      "type": "Social Media AI",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://player.vimeo.com/video/1188269756"
+      },
+      "metadata": {
+        "platform": "Instagram / TikTok",
+        "resolution": "1080x1920"
+      }
+    },
+    {
+      "id": "PRJ-005-ABOUT",
+      "section": "about",
+      "title": "MISHA PLOTNIK // MEDIA ARTIST",
+      "client": "Self",
+      "status": "ONLINE",
+      "type": "Biography",
+      "media": {
+        "type": "image",
+        "fallback_image": "images/about/Misha_avatar_v01.png"
+      },
+      "metadata": {
+        "location": "Global",
+        "specialty": "VFX & AI",
+        "status": "AVAILABLE"
+      }
+    },
+    {
+      "id": "PRJ-006-SHOWREEL",
+      "section": "motion_graphics",
+      "title": "SHOWREEL 2026 // VFX & MOTION",
+      "client": "Self",
+      "status": "OPERATIONAL",
+      "type": "Showreel",
+      "media": {
+        "type": "video_iframe",
+        "url": "https://www.youtube.com/embed/dMwpMWZafXs"
+      },
+      "metadata": {
+        "render_time": "VARIOUS",
+        "nodes_active": "MAX"
+      }
+    },
+    {
+      "id": "PRJ-MUS-S01",
+      "section": "music",
+      "sub_category": "speechless_ep",
+      "title": "MIST // COUNTING RHYMES",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Instrumental",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Speachless/Mist - Counting_Rhymes.mp3",
+        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+      },
+      "metadata": {
+        "album": "Speechless EP",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-S02",
+      "section": "music",
+      "sub_category": "speechless_ep",
+      "title": "MIST // DATA LEAK",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Instrumental",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Speachless/Mist - DataLeak.mp3",
+        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+      },
+      "metadata": {
+        "album": "Speechless EP",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-S03",
+      "section": "music",
+      "sub_category": "speechless_ep",
+      "title": "MIST // FUTURE DANCE FLOOR",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Instrumental",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Speachless/Mist - Future Dance Floor.mp3",
+        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+      },
+      "metadata": {
+        "album": "Speechless EP",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-S04",
+      "section": "music",
+      "sub_category": "speechless_ep",
+      "title": "MIST // SPEECHLESS",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Instrumental",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Speachless/Mist - Speachless.mp3",
+        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+      },
+      "metadata": {
+        "album": "Speechless EP",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-S05",
+      "section": "music",
+      "sub_category": "speechless_ep",
+      "title": "MIST // TECHNOLOGICAL DOMINANCE",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Instrumental",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Speachless/Mist - Technological Dominance.mp3",
+        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+      },
+      "metadata": {
+        "album": "Speechless EP",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-L01",
+      "section": "music",
+      "sub_category": "singles",
+      "title": "MIST // MANIFEST",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Vocal Track",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Lyrics Musics/Mist - Manifest.mp3",
+        "fallback_image": "music/Mist - Lyrics Musics/Artwork/Mist - Манифест.png"
+      },
+      "metadata": {
+        "album": "Single",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-MUS-L02",
+      "section": "music",
+      "sub_category": "singles",
+      "title": "MIST // THEY LOVE WALLS",
+      "client": "Project Mist",
+      "status": "RELEASED",
+      "type": "Vocal Track",
+      "media": {
+        "type": "audio_local",
+        "url": "music/Mist - Lyrics Musics/Mist - TheyloveWall.mp3",
+        "fallback_image": "music/Mist - Lyrics Musics/Artwork/Mist - Они любят стены.png"
+      },
+      "metadata": {
+        "album": "Single",
+        "format": "MP3"
+      }
+    },
+    {
+      "id": "PRJ-APP-001",
+      "section": "apps",
+      "template": "case_study",
+      "title": "QPROMPTER // PWA",
+      "client": "Internal",
+      "status": "DEPLOYED",
+      "type": "Web Application",
+      "media": {
+        "type": "image",
+        "fallback_image": "images/qprompter/Qprompter_laptop.png"
+      },
+      "content": {
+        "what_it_is": "Local-first prompt library with image support and AI-assisted templates. QPrompter is a browser-based tool for collecting, organising, and reusing prompts for generative AI models. Everything stays on your device – no cloud, no server, no data collection.",
+        "features": {
+          "Prompt management": "Group prompts by categories (custom colours and icons), add tags, mark favourites or pin important ones. Search, combined filters, and saved filter sets.",
+          "Image Vault": "A built-in image store that keeps your visual references. Import images from files or paste from the clipboard.",
+          "Board Builder": "Arrange selected images from the Vault into a custom grid. Adjust columns, rows, gap, canvas size and background colour. Export to PNG/JPG.",
+          "AI processing": "Use DeepSeek or Gemini APIs to format text, convert to template with {{variables}}, or strip formatting. Customisable system presets.",
+          "Import / Export": "Save your entire library as JSON or as a ZIP archive that includes all linked images.",
+          "Interface": "Works with mouse and touch. Dark theme, adjustable card density, and responsive layout."
+        },
+        "who_its_for": [
+          "Artists using reference images alongside their prompts.",
+          "People who manage dozens of prompts and need fast search.",
+          "Developers who want full control over their data without vendor lock-in."
+        ],
+        "tech_stack": [
+          "Vanilla JS", 
+          "IndexedDB", 
+          "File API", 
+          "Offline First"
+        ],
+        "links": {
+          "Live App": "https://qprompter-codex-v1.onrender.com/",
+          "GitHub": "https://github.com/MistMediaArt/QPrompter_Codex"
+        }
+      },
+      "metadata": {
+        "runtime": "LOCAL",
+        "nodes_active": "8452"
+      }
+    }
+  ]
+}
