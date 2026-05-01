@@ -129,7 +129,7 @@
       "type": "Biography",
       "media": {
         "type": "image",
-        "fallback_image": "images/about/Misha_avatar_v01.png"
+        "fallback_image": "Images/About/Misha_avatar_v01.png"
       },
       "metadata": {
         "location": "Global",
@@ -163,8 +163,8 @@
       "type": "Instrumental",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Speachless/Mist - Counting_Rhymes.mp3",
-        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+        "url": "Music/Mist - Speachless/Mist - Counting_Rhymes.mp3",
+        "fallback_image": "Music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
       },
       "metadata": {
         "album": "Speechless EP",
@@ -181,8 +181,8 @@
       "type": "Instrumental",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Speachless/Mist - DataLeak.mp3",
-        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+        "url": "Music/Mist - Speachless/Mist - DataLeak.mp3",
+        "fallback_image": "Music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
       },
       "metadata": {
         "album": "Speechless EP",
@@ -199,8 +199,8 @@
       "type": "Instrumental",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Speachless/Mist - Future Dance Floor.mp3",
-        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+        "url": "Music/Mist - Speachless/Mist - Future Dance Floor.mp3",
+        "fallback_image": "Music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
       },
       "metadata": {
         "album": "Speechless EP",
@@ -217,8 +217,8 @@
       "type": "Instrumental",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Speachless/Mist - Speachless.mp3",
-        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+        "url": "Music/Mist - Speachless/Mist - Speachless.mp3",
+        "fallback_image": "Music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
       },
       "metadata": {
         "album": "Speechless EP",
@@ -235,8 +235,8 @@
       "type": "Instrumental",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Speachless/Mist - Technological Dominance.mp3",
-        "fallback_image": "music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
+        "url": "Music/Mist - Speachless/Mist - Technological Dominance.mp3",
+        "fallback_image": "Music/Mist - Speachless/Artwork/photo_2025-12-09_23-29-46.jpg"
       },
       "metadata": {
         "album": "Speechless EP",
@@ -253,8 +253,8 @@
       "type": "Vocal Track",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Lyrics Musics/Mist - Manifest.mp3",
-        "fallback_image": "music/Mist - Lyrics Musics/Artwork/Mist - Манифест.png"
+        "url": "Music/Mist - Lyrics Musics/Mist - Manifest.mp3",
+        "fallback_image": "Music/Mist - Lyrics Musics/Artwork/Mist - Манифест.png"
       },
       "metadata": {
         "album": "Single",
@@ -271,8 +271,8 @@
       "type": "Vocal Track",
       "media": {
         "type": "audio_local",
-        "url": "music/Mist - Lyrics Musics/Mist - TheyloveWall.mp3",
-        "fallback_image": "music/Mist - Lyrics Musics/Artwork/Mist - Они любят стены.png"
+        "url": "Music/Mist - Lyrics Musics/Mist - TheyloveWall.mp3",
+        "fallback_image": "Music/Mist - Lyrics Musics/Artwork/Mist - Они любят стены.png"
       },
       "metadata": {
         "album": "Single",
@@ -289,7 +289,7 @@
       "type": "Web Application",
       "media": {
         "type": "image",
-        "fallback_image": "images/qprompter/Qprompter_laptop.png"
+        "fallback_image": "Images/QPrompter/Qprompter_laptop.png"
       },
       "content": {
         "what_it_is": "Local-first prompt library with image support and AI-assisted templates. QPrompter is a browser-based tool for collecting, organising, and reusing prompts for generative AI models. Everything stays on your device – no cloud, no server, no data collection.",
