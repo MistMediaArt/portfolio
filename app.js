@@ -250,6 +250,7 @@ function renderContent() {
     } else {
         // Standard Layout
         const isImage = activeProject.media.type === 'image';
+        const isAudio = activeProject.media.type === 'audio_local';
         const isVertical = activeProject.sub_category === 'social_media';
         const wrapperClass = isImage ? 'image-placeholder' : (isVertical ? 'vertical-placeholder' : '');
         
@@ -258,7 +259,7 @@ function renderContent() {
                 <div class="main-viewer-container">
                     <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
-                        ${!isImage ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
+                        ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title">${activeProject.title}</h1>
                 </div>
@@ -285,6 +286,15 @@ function renderContent() {
     }
 
     terminalRoot.innerHTML = featuredHTML;
+
+    // YouTube Mobile Facade Event
+    const youtubeFacade = document.querySelector('.youtube-facade');
+    if (youtubeFacade) {
+        youtubeFacade.addEventListener('click', function() {
+            const iframeUrl = this.getAttribute('data-iframe-url');
+            this.outerHTML = `<iframe src="${iframeUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; height:100%;"></iframe>`;
+        });
+    }
 
     // Attach Fullscreen Event
     const fullscreenBtn = document.getElementById('fullscreen-btn');
@@ -451,6 +461,27 @@ function getMediaHTML(media, isMain) {
         
         // Main Viewer Iframe
         const allowString = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        
+        // On mobile, YouTube injects too much UI that covers the video. 
+        // We use a facade pattern (image -> click -> iframe) on mobile to keep it clean.
+        const isMobile = window.innerWidth <= 768;
+        if (isMain && isMobile && finalUrl.includes('youtube.com/embed/')) {
+            let thumbUrl = media.fallback_image;
+            if (!thumbUrl) {
+                const videoId = finalUrl.split('embed/')[1].split('?')[0];
+                thumbUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            }
+            const separator = finalUrl.includes('?') ? '&' : '?';
+            const autoplayUrl = finalUrl + separator + 'autoplay=1';
+            
+            return `
+                <div class="youtube-facade" data-iframe-url="${autoplayUrl}" style="position: relative; width: 100%; height: 100%; cursor: pointer;">
+                    <img src="${thumbUrl}" alt="Video Cover" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="custom-play-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: var(--status-operational); text-shadow: 0 0 15px rgba(0,0,0,0.8); pointer-events: none;">▶</div>
+                </div>
+            `;
+        }
+        
         return `<iframe src="${finalUrl}" frameborder="0" allow="${allowString}" allowfullscreen></iframe>`;
     } 
     else if (media.type === 'video_local') {
