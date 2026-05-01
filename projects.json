@@ -14,7 +14,7 @@
         "url": "https://www.youtube.com/embed/9pdyR_LHwk4"
       },
       "metadata": {
-        "render_time": "14.2MS",
+        "duration": "00:45",
         "nodes_active": 4502
       }
     },
@@ -31,7 +31,7 @@
         "url": "https://www.youtube.com/embed/ElhU6_Sdfco"
       },
       "metadata": {
-        "render_time": "0.002MS",
+        "duration": "03:12",
         "nodes_active": 14072
       }
     },
@@ -48,7 +48,7 @@
         "url": "https://www.youtube.com/embed/w6ipNWxQ2e4"
       },
       "metadata": {
-        "render_time": "12.4MS",
+        "duration": "01:15",
         "nodes_active": 8452
       }
     },
@@ -131,6 +131,25 @@
         "type": "image",
         "fallback_image": "Images/About/Misha_avatar_v01.png"
       },
+      "content": {
+        "what_it_is": "A seasoned VFX professional and media artist blending creativity with cutting-edge technology.",
+        "features": {
+          "Experience": "10+ years in the industry",
+          "Focus": "AI-driven Cinematic content & Motion Graphics",
+          "Tools": "Unreal Engine, Nuke, Blender, AI Generative tools"
+        },
+        "who_its_for": [
+          "Commercial Clients",
+          "Creative Agencies",
+          "Game Studios",
+          "Music Artists"
+        ],
+        "links": {
+          "YouTube": "https://youtube.com/@mistmediaart-et3cb?si=i7BK9ApvyNgFQ7BI",
+          "SoundCloud": "https://soundcloud.com/low-fi-saints-are-decoded",
+          "GitHub": "https://github.com/MistMediaArt"
+        }
+      },
       "metadata": {
         "location": "Global",
         "specialty": "VFX & AI",
@@ -141,7 +160,7 @@
     {
       "id": "PRJ-006-SHOWREEL",
       "section": "motion_graphics",
-      "title": "SHOWREEL 2026 // VFX & MOTION",
+      "title": "SHOWREEL 2024 // VFX & MOTION",
       "client": "Self",
       "status": "OPERATIONAL",
       "type": "Showreel",
@@ -150,7 +169,7 @@
         "url": "https://www.youtube.com/embed/dMwpMWZafXs"
       },
       "metadata": {
-        "render_time": "VARIOUS",
+        "duration": "01:20",
         "nodes_active": "MAX"
       }
     },

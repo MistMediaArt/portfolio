@@ -272,6 +272,20 @@ function renderContent() {
                     <div class="system-status">
                         SYSTEM STATUS: <span class="status-operational">${activeProject.status || 'OPERATIONAL'}</span>
                     </div>
+
+                    ${activeProject.content && activeProject.content.links ? `
+                    <div class="cs-links" style="margin-top: 1rem;">
+                        ${Object.entries(activeProject.content.links).map(([k, v]) => `
+                            <a href="${v}" target="_blank" class="cs-link-btn">>> [ ${k.toUpperCase()} ]</a>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+
+                    ${activeSection === 'music' ? `
+                    <div class="cs-links" style="margin-top: 1rem;">
+                        <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn">>> [ SOUNDCLOUD ]</a>
+                    </div>
+                    ` : ''}
                     
                     ${carouselHTML}
                     
