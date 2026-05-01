@@ -230,7 +230,7 @@ function renderContent() {
 
                     <div class="cs-links">
                         ${Object.entries(activeProject.content.links || {}).map(([k, v]) => `
-                            <a href="${v}" target="_blank" class="cs-link-btn">>> [ ${k.toUpperCase()} ]</a>
+                            <a href="${v}" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ ${k.toUpperCase()} ]</span></a>
                         `).join('')}
                     </div>
                     
@@ -276,18 +276,18 @@ function renderContent() {
                     ${activeProject.content && activeProject.content.links ? `
                     <div class="cs-links" style="margin-top: 1rem;">
                         ${Object.entries(activeProject.content.links).map(([k, v]) => `
-                            <a href="${v}" target="_blank" class="cs-link-btn">>> [ ${k.toUpperCase()} ]</a>
+                            <a href="${v}" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ ${k.toUpperCase()} ]</span></a>
                         `).join('')}
                     </div>
                     ` : ''}
 
+                    ${carouselHTML}
+
                     ${activeSection === 'music' ? `
                     <div class="cs-links" style="margin-top: 1rem;">
-                        <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn">>> [ SOUNDCLOUD ]</a>
+                        <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ SOUNDCLOUD ]</span></a>
                     </div>
                     ` : ''}
-                    
-                    ${carouselHTML}
                     
                     <div class="metadata-grid">
                         ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
