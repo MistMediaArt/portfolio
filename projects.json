@@ -1,5 +1,11 @@
 {
-  "sections": ["ai", "motion_graphics", "music", "apps", "about"],
+  "sections": [
+    "ai",
+    "motion_graphics",
+    "music",
+    "apps",
+    "about"
+  ],
   "projects": [
     {
       "id": "PRJ-001-DELIVERY",
@@ -14,7 +20,7 @@
         "url": "https://www.youtube.com/embed/9pdyR_LHwk4"
       },
       "metadata": {
-        "duration": "00:45",
+        "duration": "02:05",
         "nodes_active": 4502
       }
     },
@@ -31,7 +37,7 @@
         "url": "https://www.youtube.com/embed/ElhU6_Sdfco"
       },
       "metadata": {
-        "duration": "03:12",
+        "duration": "02:36",
         "nodes_active": 14072
       }
     },
@@ -48,7 +54,7 @@
         "url": "https://www.youtube.com/embed/w6ipNWxQ2e4"
       },
       "metadata": {
-        "duration": "01:15",
+        "duration": "02:10",
         "nodes_active": 8452
       }
     },
@@ -169,7 +175,7 @@
         "url": "https://www.youtube.com/embed/dMwpMWZafXs"
       },
       "metadata": {
-        "duration": "01:20",
+        "duration": "00:57",
         "nodes_active": "MAX"
       }
     },
@@ -327,9 +333,9 @@
           "Developers who want full control over their data without vendor lock-in."
         ],
         "tech_stack": [
-          "Vanilla JS", 
-          "IndexedDB", 
-          "File API", 
+          "Vanilla JS",
+          "IndexedDB",
+          "File API",
           "Offline First"
         ],
         "links": {
