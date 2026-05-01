@@ -123,7 +123,46 @@ function renderContent() {
     if (!activeProject) activeProject = projects[0];
 
     // Reusable Carousel HTML
-    const carouselHTML = projects.length > 1 ? `
+    let transitionItemHTML = '';
+    if (activeSection === 'ai') {
+        if (activeSubCategory === 'cinematic') {
+            transitionItemHTML = `
+                <div class="carousel-item transition-link" data-target-sub="social_media">
+                    <div class="carousel-thumbnail" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border: 1px dashed var(--grid-line-color);">
+                        <div style="text-align: center; line-height: 1.4; padding: 1rem;">
+                            <span style="color: var(--text-muted); font-size: 0.8rem;">[ NEXT CATEGORY ]</span><br>
+                            <span style="color: var(--text-main); font-size: 1.1rem; letter-spacing: 1px;">SOCIAL MEDIA</span><br>
+                            <span style="color: var(--status-operational);">>>></span>
+                        </div>
+                    </div>
+                    <div class="carousel-meta">
+                        CLIENT: <span style="color: var(--status-operational); display: inline;">SYSTEM</span><br>
+                        ID: <span style="color: var(--status-operational); display: inline;">REDIRECT</span><br>
+                        TYPE: <span style="color: var(--status-operational); display: inline;">NAVIGATION</span>
+                    </div>
+                </div>
+            `;
+        } else if (activeSubCategory === 'social_media') {
+            transitionItemHTML = `
+                <div class="carousel-item transition-link" data-target-sub="cinematic">
+                    <div class="carousel-thumbnail" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border: 1px dashed var(--grid-line-color);">
+                        <div style="text-align: center; line-height: 1.4; padding: 1rem;">
+                            <span style="color: var(--text-muted); font-size: 0.8rem;">[ NEXT CATEGORY ]</span><br>
+                            <span style="color: var(--text-main); font-size: 1.1rem; letter-spacing: 1px;">CINEMATIC</span><br>
+                            <span style="color: var(--status-operational);"><<<</span>
+                        </div>
+                    </div>
+                    <div class="carousel-meta">
+                        CLIENT: <span style="color: var(--status-operational); display: inline;">SYSTEM</span><br>
+                        ID: <span style="color: var(--status-operational); display: inline;">REDIRECT</span><br>
+                        TYPE: <span style="color: var(--status-operational); display: inline;">NAVIGATION</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    const carouselHTML = (projects.length > 1 || transitionItemHTML) ? `
         <div class="carousel-container">
             <button class="scroll-btn scroll-left" id="scroll-left">&lt;</button>
             <button class="scroll-btn scroll-right" id="scroll-right">&gt;</button>
@@ -140,6 +179,7 @@ function renderContent() {
                         </div>
                     </div>
                 `).join('')}
+                ${transitionItemHTML}
             </div>
         </div>
     ` : '';
@@ -209,12 +249,16 @@ function renderContent() {
         `;
     } else {
         // Standard Layout
+        const isImage = activeProject.media.type === 'image';
+        const isVertical = activeProject.sub_category === 'social_media';
+        const wrapperClass = isImage ? 'image-placeholder' : (isVertical ? 'vertical-placeholder' : '');
+        
         featuredHTML = `
             <div class="featured-layout">
                 <div class="main-viewer-container">
-                    <div class="main-video-wrapper" id="main-video-wrapper">
+                    <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
-                        <button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>
+                        ${!isImage ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title">${activeProject.title}</h1>
                 </div>
@@ -305,9 +349,28 @@ function renderContent() {
     // Attach Carousel Events
     terminalRoot.querySelectorAll('.carousel-item').forEach(item => {
         item.addEventListener('click', (e) => {
+            if (e.currentTarget.classList.contains('transition-link')) {
+                const targetSub = e.currentTarget.dataset.targetSub;
+                updateStateForSubCategory(targetSub);
+                renderNav();
+                renderContent();
+                return;
+            }
+
             const projectId = e.currentTarget.dataset.id;
             activeProject = projects.find(p => p.id === projectId);
+            
+            // Save current scroll position
+            const wrapper = document.getElementById('carousel-wrapper');
+            const savedScroll = wrapper ? wrapper.scrollLeft : 0;
+            
             renderContent();
+            
+            // Restore scroll position
+            const newWrapper = document.getElementById('carousel-wrapper');
+            if (newWrapper) {
+                newWrapper.scrollLeft = savedScroll;
+            }
         });
     });
 
@@ -356,26 +419,39 @@ function renderContent() {
 
 function getMediaHTML(media, isMain) {
     if (media.type === 'video_iframe') {
+        let finalUrl = media.url;
+        if (finalUrl.includes('vimeo.com')) {
+            const separator = finalUrl.includes('?') ? '&' : '?';
+            finalUrl += `${separator}title=0&byline=0&portrait=0&badge=0`;
+        }
+
         if (!isMain) {
-            // Generate thumbnail for YouTube automatically, or use fallback
-            let thumbUrl = media.fallback_image;
-            if (!thumbUrl && media.url.includes('youtube.com/embed/')) {
-                const videoId = media.url.split('embed/')[1].split('?')[0];
-                thumbUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-            }
-            if (thumbUrl) {
+            // YouTube doesn't support clean background autoplay (forces UI and play button).
+            // So we extract the thumbnail image for YouTube.
+            if (media.url.includes('youtube.com/embed/')) {
+                let thumbUrl = media.fallback_image;
+                if (!thumbUrl) {
+                    const videoId = media.url.split('embed/')[1].split('?')[0];
+                    thumbUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                }
                 return `
                     <img src="${thumbUrl}" alt="Thumbnail">
                     <div class="custom-play-icon">▶</div>
                 `;
             }
-            // Fallback if no thumbnail is possible
-            return `<iframe src="${media.url}" frameborder="0" tabindex="-1"></iframe>`;
+            
+            // Vimeo supports clean background autoplay, so we use it for moving thumbnails!
+            let thumbIframeUrl = finalUrl;
+            if (thumbIframeUrl.includes('vimeo.com')) {
+                const separator = thumbIframeUrl.includes('?') ? '&' : '?';
+                thumbIframeUrl += `${separator}background=1&muted=1&loop=1&autoplay=1`;
+            }
+            return `<div style="position: relative; width: 100%; height: 100%; pointer-events: none;"><iframe src="${thumbIframeUrl}" frameborder="0" tabindex="-1" style="width: 100%; height: 100%; pointer-events: none;"></iframe></div>`;
         }
         
         // Main Viewer Iframe
         const allowString = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-        return `<iframe src="${media.url}" frameborder="0" allow="${allowString}" allowfullscreen></iframe>`;
+        return `<iframe src="${finalUrl}" frameborder="0" allow="${allowString}" allowfullscreen></iframe>`;
     } 
     else if (media.type === 'video_local') {
         if (!isMain) {

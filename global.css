@@ -85,16 +85,46 @@ h1, h2, h3 {
 .sub-nav {
     padding: 0 2rem 1.5rem 2rem;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     position: relative;
     z-index: 100;
 }
 .sub-nav button {
     border: 1px solid var(--grid-line-color);
-    padding: 0.2rem 0.5rem;
+    padding: 0.4rem 1rem;
+    position: relative;
+    background: transparent;
+    transition: all 0.2s;
+}
+.sub-nav button:hover {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 .sub-nav button.active {
     border-color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+.sub-nav button.active::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px dashed var(--text-main);
+    pointer-events: none;
+    opacity: 0.6;
+    animation: navGlitch 4s infinite linear;
+}
+
+@keyframes navGlitch {
+    0%, 100% { clip-path: inset(0 0 0 0); opacity: 0.6; transform: translate(0); }
+    20% { clip-path: inset(20% 0 60% 0); opacity: 0.3; transform: translate(-2px, 1px); }
+    22% { clip-path: inset(0 0 0 0); opacity: 0.6; transform: translate(0); }
+    50% { clip-path: inset(60% 0 20% 0); opacity: 0.8; transform: translate(2px, -1px); }
+    52% { clip-path: inset(0 0 0 0); opacity: 0.6; transform: translate(0); }
+    80% { clip-path: inset(10% 0 80% 0); opacity: 0.4; transform: translate(-1px, -1px); }
+    82% { clip-path: inset(0 0 0 0); opacity: 0.6; transform: translate(0); }
 }
 
 /* Decorative Background Grid */
@@ -170,26 +200,55 @@ h1, h2, h3 {
     pointer-events: auto; /* Let user click to play/pause */
 }
 
+/* Image Placeholder Style for Biography/About */
+.main-video-wrapper.image-placeholder {
+    aspect-ratio: auto;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.main-video-wrapper.image-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Vertical Social Media Wrapper */
+.main-video-wrapper.vertical-placeholder {
+    width: auto;
+    height: 75vh;
+    max-height: 800px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+}
+
 /* Fullscreen Button */
 .fullscreen-btn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--text-main);
-    border: 1px solid var(--grid-line-color);
-    padding: 0.5rem 1rem;
+    top: 36px; /* Push down completely into the video area to align with dots */
+    right: 68px; /* Offset to sit right next to the Vimeo dots */
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(17, 17, 17, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 4px; /* Match Vimeo button roundness */
+    padding: 0 12px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     cursor: pointer;
     z-index: 20;
     transition: all 0.2s;
-    backdrop-filter: blur(4px);
 }
 
 .fullscreen-btn:hover {
-    background: var(--text-main);
-    color: var(--bg-color);
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
 .main-title {
