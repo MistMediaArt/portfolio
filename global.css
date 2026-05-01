@@ -699,10 +699,10 @@ body::after {
         scrollbar-width: none;  /* Firefox */
     }
 
-    /* Fix Fullscreen Button overlapping on mobile */
+    /* Hide custom Fullscreen Button on mobile 
+       (iOS does not support fullscreen API for divs, users must use native player controls) */
     .fullscreen-btn {
-        top: 10px;
-        right: 10px;
+        display: none;
     }
 
     /* Fix Audio Player */
