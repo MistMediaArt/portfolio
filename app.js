@@ -82,7 +82,7 @@ function renderNav() {
 
     filtersContainer.querySelectorAll('button').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            updateStateForSection(e.target.dataset.section);
+            updateStateForSection(e.currentTarget.dataset.section);
             renderNav();
             renderContent();
         });
@@ -100,7 +100,7 @@ function renderNav() {
 
         subFiltersContainer.querySelectorAll('button').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                updateStateForSubCategory(e.target.dataset.sub);
+                updateStateForSubCategory(e.currentTarget.dataset.sub);
                 renderNav();
                 renderContent();
             });
