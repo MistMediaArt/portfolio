@@ -240,6 +240,15 @@ h3 {
     flex-direction: column;
 }
 
+/* Right: Side Panel */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 6rem; /* Keeps it under the header */
+    height: fit-content;
+}
+
 .main-video-wrapper {
     position: relative;
     width: 100%;
@@ -807,8 +816,13 @@ h3 {
 @media (max-width: 1024px) {
     .featured-layout {
         grid-template-columns: 1fr;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
         gap: 2rem;
+    }
+
+    .side-panel {
+        position: static;
+        height: auto;
     }
 
     .side-panel {
