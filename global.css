@@ -926,6 +926,59 @@ h3 {
 }
 
 /* =========================================
+   Subtle TV Glitch / Scanline Effect
+   ========================================= */
+.glitch-box {
+    position: relative;
+    overflow: hidden;
+    animation: tvFlicker 6s infinite alternate;
+}
+
+.glitch-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.03) 2px,
+        rgba(255, 255, 255, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    animation: scanlinesMove 8s linear infinite;
+}
+
+.glitch-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes scanlinesMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+@keyframes tvFlicker {
+    0%, 96%, 98%, 100% { 
+        opacity: 1; 
+        transform: translate(0, 0);
+        text-shadow: none; 
+    }
+    97% { 
+        opacity: 0.85; 
+        transform: translate(1px, -1px);
+        text-shadow: 2px 0px 1px rgba(255, 0, 0, 0.4), -2px 0px 1px rgba(0, 255, 255, 0.4); 
+    }
+    99% { 
+        opacity: 0.95; 
+        transform: translate(-1px, 0);
+        text-shadow: -1px 0px 1px rgba(255, 0, 0, 0.4), 1px 0px 1px rgba(0, 255, 255, 0.4); 
+    }
+}
+
+/* =========================================
    Generative Video Grid
    ========================================= */
 .generative-video-grid {
