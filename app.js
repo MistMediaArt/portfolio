@@ -4,6 +4,9 @@ let activeSection = 'ai'; // Default to AI
 let activeSubCategory = null;
 let activeProject = null; // Currently featured project
 
+// Detect iOS devices (including iPads requesting desktop sites)
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 // DOM Elements
 const terminalRoot = document.getElementById('terminal-root');
 const filtersContainer = document.getElementById('category-filters');
@@ -269,7 +272,7 @@ function renderContent() {
                 <div class="main-viewer-container">
                     <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
-                        ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
+                        ${(!isImage && !isAudio && !isIOS) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title title-${activeProject.sub_category || 'default'}" style="margin-top: 2rem;">${activeProject.title}</h1>
                     ${activeProject.metadata ? `
