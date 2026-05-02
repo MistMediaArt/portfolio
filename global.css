@@ -379,14 +379,6 @@ h3 {
     min-width: 0;
 }
 
-/* Override spacing specifically for Motion Graphics side panel */
-.featured-layout[data-section="motion_graphics"] .side-panel {
-    gap: 0.5rem;
-}
-
-.featured-layout[data-section="motion_graphics"] .desktop-only-sidebar-content {
-    margin-top: 0 !important;
-}
 
 /* Decor line out from side panel */
 .side-panel::before {
@@ -856,6 +848,10 @@ h3 {
     .sidebar-text-block {
         font-size: 0.8rem !important;
     }
+
+    .side-panel {
+        gap: 0.5rem;
+    }
 }
 
 /* Mobile Protocol */
@@ -880,6 +876,7 @@ h3 {
     .side-panel {
         position: static;
         height: auto;
+        gap: 1rem;
     }
 
     .side-panel {
