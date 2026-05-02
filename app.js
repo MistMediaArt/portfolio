@@ -457,12 +457,26 @@ function renderContent() {
 
     if (csGalleryContainer && csGalleryLeft && csGalleryRight) {
         csGalleryLeft.addEventListener('click', () => {
-            const itemWidth = csGalleryContainer.clientWidth + 16; // width + gap
-            csGalleryContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            const container = csGalleryContainer;
+            const itemWidth = container.clientWidth + 16; // width + gap
+            
+            if (container.scrollLeft <= 10) {
+                // If at the beginning, jump to the end
+                container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            }
         });
         csGalleryRight.addEventListener('click', () => {
-            const itemWidth = csGalleryContainer.clientWidth + 16; // width + gap
-            csGalleryContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            const container = csGalleryContainer;
+            const itemWidth = container.clientWidth + 16; // width + gap
+            
+            if (Math.ceil(container.scrollLeft + container.clientWidth) >= container.scrollWidth - 10) {
+                // If at the end, jump back to the beginning
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
         });
     }
 }
