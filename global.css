@@ -992,11 +992,6 @@ h3 {
     animation: scanlinesMove 8s linear infinite;
 }
 
-.glitch-box > * {
-    position: relative;
-    z-index: 2;
-}
-
 @keyframes scanlinesMove {
     0% { background-position: 0 0; }
     100% { background-position: 0 100px; }
@@ -1043,11 +1038,6 @@ h3 {
     pointer-events: none;
     z-index: 10;
     animation: scanlinesMove 8s linear infinite;
-}
-
-.glitch-box-strong > * {
-    position: relative;
-    z-index: 11;
 }
 
 @keyframes tvFlickerStrong {
