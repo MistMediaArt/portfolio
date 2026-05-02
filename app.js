@@ -272,6 +272,13 @@ function renderContent() {
                         ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title" style="margin-top: 2rem;">${activeProject.title}</h1>
+                    ${activeProject.metadata ? `
+                        <div class="mobile-only-sidebar-content metadata-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
+                            ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
+                                <div>${k.toUpperCase().replace('_', ' ')}<span>${v}</span></div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
                     ${activeProject.content && activeProject.content.sidebar_html ? `
                         <div class="mobile-only-sidebar-content case-study-content" style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
                             ${activeProject.content.sidebar_html}
@@ -315,11 +322,13 @@ function renderContent() {
                     </div>
                     ` : ''}
                     
-                    <div class="metadata-grid">
+                    ${activeProject.metadata ? `
+                    <div class="desktop-only-sidebar-content metadata-grid">
                         ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
                             <div>${k.toUpperCase().replace('_', ' ')}<span>${v}</span></div>
                         `).join('')}
                     </div>
+                    ` : ''}
                 </div>
             </div>
         `;
