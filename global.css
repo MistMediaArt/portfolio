@@ -599,6 +599,20 @@ h3 {
 }
 
 /* Case Study Template */
+.cs-gallery-container {
+    max-height: 75vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.cs-gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
 .case-study-content {
     margin-top: 2rem;
     display: flex;

@@ -315,7 +315,11 @@
       "type": "Web Application",
       "media": {
         "type": "image",
-        "fallback_image": "Images/QPrompter/Qprompter_laptop.png"
+        "fallback_image": "Images/QPrompter/Qprompter_laptop.png",
+        "gallery": [
+          "Images/QPrompter/Qprompter_laptop.png",
+          "Images/QPrompter/I_need_this_exact_interface_202605021912.jpeg"
+        ]
       },
       "content": {
         "what_it_is": "Local-first prompt library with image support and AI-assisted templates. QPrompter is a browser-based tool for collecting, organising, and reusing prompts for generative AI models. Everything stays on your device – no cloud, no server, no data collection.",

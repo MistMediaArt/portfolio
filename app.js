@@ -190,8 +190,14 @@ function renderContent() {
         featuredHTML = `
             <div class="featured-layout case-study-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
-                    <div class="main-video-wrapper" style="aspect-ratio: auto; min-height: 400px; background: none;">
-                        <img src="${activeProject.media.fallback_image}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
+                    <div class="main-video-wrapper" style="aspect-ratio: auto; background: none; padding: 1rem;">
+                        <div class="cs-gallery-container">
+                            ${activeProject.media.gallery ? activeProject.media.gallery.map(img => `
+                                <img src="${img}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
+                            `).join('') : `
+                                <img src="${activeProject.media.fallback_image}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
+                            `}
+                        </div>
                     </div>
                     <h1 class="main-title" style="margin-top: 2rem;">${activeProject.title}</h1>
                     
