@@ -58,7 +58,8 @@ h3 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(18, 18, 18, 0.85); /* var(--bg-color) with opacity */
+    background-color: rgba(18, 18, 18, 0.85);
+    /* var(--bg-color) with opacity */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid transparent;
@@ -829,16 +830,16 @@ h3 {
         padding: 0 2rem;
         gap: 2rem;
     }
-    
+
     .cs-block {
         padding: 1rem;
     }
 
-    .cs-block p, 
+    .cs-block p,
     .cs-list li {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
-    
+
     .cs-heading {
         font-size: 1rem;
     }
