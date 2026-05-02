@@ -823,6 +823,31 @@ h3 {
     display: block;
 }
 
+/* Tablet Landscape / Small Desktop Protocol */
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .featured-layout {
+        padding: 0 2rem;
+        gap: 2rem;
+    }
+    
+    .cs-block {
+        padding: 1rem;
+    }
+
+    .cs-block p, 
+    .cs-list li {
+        font-size: 0.85rem;
+    }
+    
+    .cs-heading {
+        font-size: 1rem;
+    }
+
+    .sidebar-text-block {
+        font-size: 0.8rem !important;
+    }
+}
+
 /* Mobile Protocol */
 @media (max-width: 1024px) {
     .featured-layout {
