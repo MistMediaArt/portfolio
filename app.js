@@ -18,7 +18,8 @@ async function initTerminal() {
     const bootPromise = runBootAnimation();
     
     try {
-        const response = await fetch('./projects.json');
+        // Use a cache buster to prevent stubborn browser caching during development
+        const response = await fetch(`./projects.json?v=${new Date().getTime()}`);
         if (!response.ok) throw new Error(`HTTP ${response.status}: DATA NOT FOUND`);
         
         portfolioData = await response.json();
