@@ -274,7 +274,7 @@ function renderContent() {
                 <div class="main-viewer-container">
                     <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
-                        ${(!isImage && !isAudio && !isIOSStandalone) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
+                        ${((!isImage || activeSection === 'apps') && !isAudio && !isIOSStandalone) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title title-${activeProject.sub_category || 'default'}" style="margin-top: 2rem;">${activeProject.title}</h1>
                     ${activeProject.metadata ? `
