@@ -280,7 +280,7 @@ function renderContent() {
                         </div>
                     ` : ''}
                     ${activeProject.content && activeProject.content.sidebar_html ? `
-                        <div class="mobile-only-sidebar-content case-study-content" style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        <div class="mobile-only-sidebar-content sidebar-text-block">
                             ${activeProject.content.sidebar_html}
                         </div>
                     ` : ''}
@@ -311,7 +311,7 @@ function renderContent() {
                     ${carouselHTML}
 
                     ${activeProject.content && activeProject.content.sidebar_html ? `
-                        <div class="desktop-only-sidebar-content sidebar-text-block" style="margin-top: 1rem; font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        <div class="desktop-only-sidebar-content sidebar-text-block">
                             ${activeProject.content.sidebar_html}
                         </div>
                     ` : ''}

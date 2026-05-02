@@ -825,6 +825,22 @@ h3 {
     display: block;
 }
 
+/* Desktop Overrides for Side Panel */
+@media (min-width: 1401px) {
+    .desktop-only-sidebar-content.sidebar-text-block {
+        margin-top: -1.5rem;
+    }
+
+    .sidebar-text-block .cs-block p,
+    .sidebar-text-block .cs-list li {
+        font-size: 1.05rem;
+    }
+
+    .sidebar-text-block .cs-heading {
+        font-size: 1.2rem;
+    }
+}
+
 /* Tablet Landscape / Small Desktop Protocol */
 @media (min-width: 1025px) and (max-width: 1400px) {
     .featured-layout {
