@@ -239,15 +239,6 @@ h3 {
     flex-direction: column;
 }
 
-/* Right: Side Panel */
-.side-panel {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 6rem; /* Keeps it under the header */
-    height: fit-content;
-    align-self: start;
-}
 
 .main-video-wrapper {
     position: relative;
@@ -371,9 +362,10 @@ h3 {
     gap: 2rem;
     border-left: 1px solid var(--grid-line-color);
     padding-left: 2rem;
-    position: relative;
+    position: sticky;
+    top: 6rem;
+    align-self: start;
     min-width: 0;
-    /* Prevents flex/grid children from stretching the column */
 }
 
 /* Decor line out from side panel */
