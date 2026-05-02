@@ -348,7 +348,7 @@ h3 {
 }
 
 .main-title {
-    font-size: 3.5rem;
+    /* Base styles only, sizes defined below */
     font-family: var(--font-sans);
     letter-spacing: -1px;
     margin-top: 1rem;
@@ -364,6 +364,16 @@ h3 {
     width: 3rem;
     height: 1px;
     background-color: var(--grid-line-color);
+}
+
+/* Category-specific Title Sizes */
+.title-cinematic,
+.title-default {
+    font-size: 3.5rem;
+}
+
+.title-social_media {
+    font-size: 2rem;
 }
 
 /* Right: Side Panel */
@@ -904,6 +914,10 @@ h3 {
 
     .main-title {
         font-size: 2rem;
+    }
+
+    .title-social_media {
+        font-size: 1.5rem;
     }
 
     .main-title::before {

@@ -271,7 +271,7 @@ function renderContent() {
                         ${getMediaHTML(activeProject.media, true)}
                         ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
-                    <h1 class="main-title" style="margin-top: 2rem;">${activeProject.title}</h1>
+                    <h1 class="main-title title-${activeProject.sub_category || 'default'}" style="margin-top: 2rem;">${activeProject.title}</h1>
                     ${activeProject.metadata ? `
                         <div class="mobile-only-sidebar-content metadata-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
                             ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
