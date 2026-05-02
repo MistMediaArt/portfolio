@@ -197,9 +197,9 @@ function renderContent() {
                         ` : ''}
                         <div class="cs-gallery-container" id="cs-gallery-container">
                             ${activeProject.media.gallery ? activeProject.media.gallery.map(img => `
-                                <img src="${img}" alt="Case Study Image" class="cs-gallery-item">
+                                <div class="cs-gallery-item"><img src="${img}" alt="Case Study Image"></div>
                             `).join('') : `
-                                <img src="${activeProject.media.fallback_image}" alt="Case Study Image" class="cs-gallery-item">
+                                <div class="cs-gallery-item"><img src="${activeProject.media.fallback_image}" alt="Case Study Image"></div>
                             `}
                         </div>
                     </div>
@@ -457,18 +457,12 @@ function renderContent() {
 
     if (csGalleryContainer && csGalleryLeft && csGalleryRight) {
         csGalleryLeft.addEventListener('click', () => {
-            const firstItem = csGalleryContainer.querySelector('.cs-gallery-item');
-            if(firstItem) {
-                const itemWidth = firstItem.offsetWidth + 16; // 1rem gap
-                csGalleryContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-            }
+            const itemWidth = csGalleryContainer.clientWidth + 16; // width + gap
+            csGalleryContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
         });
         csGalleryRight.addEventListener('click', () => {
-            const firstItem = csGalleryContainer.querySelector('.cs-gallery-item');
-            if(firstItem) {
-                const itemWidth = firstItem.offsetWidth + 16; // 1rem gap
-                csGalleryContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
-            }
+            const itemWidth = csGalleryContainer.clientWidth + 16; // width + gap
+            csGalleryContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
         });
     }
 }
