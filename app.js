@@ -196,16 +196,16 @@ function renderContent() {
         featuredHTML = `
             <div class="featured-layout case-study-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
-                    <div class="main-video-wrapper" style="aspect-ratio: auto; background: none; padding: 1rem; position: relative;">
+                    <div class="main-video-wrapper glitch-box" style="aspect-ratio: auto; background: none; padding: 1rem; position: relative;">
                         ${activeProject.media.gallery && activeProject.media.gallery.length > 1 ? `
                         <button class="cs-gallery-scroll-btn left" id="cs-gallery-left">&lt;</button>
                         <button class="cs-gallery-scroll-btn right" id="cs-gallery-right">&gt;</button>
                         ` : ''}
                         <div class="cs-gallery-container" id="cs-gallery-container">
                             ${activeProject.media.gallery ? activeProject.media.gallery.map(img => `
-                                <div class="cs-gallery-item"><img src="${img}" alt="Case Study Image"></div>
+                                <div class="cs-gallery-item glitch-box"><img src="${img}" alt="Case Study Image"></div>
                             `).join('') : `
-                                <div class="cs-gallery-item"><img src="${activeProject.media.fallback_image}" alt="Case Study Image"></div>
+                                <div class="cs-gallery-item glitch-box"><img src="${activeProject.media.fallback_image}" alt="Case Study Image"></div>
                             `}
                         </div>
                     </div>
@@ -273,7 +273,7 @@ function renderContent() {
         featuredHTML = `
             <div class="featured-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
-                    <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
+                    <div class="main-video-wrapper glitch-box ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
                         ${((!isImage || activeSection === 'apps') && !isAudio && !isIOSStandalone) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
@@ -593,7 +593,7 @@ function getMediaHTML(media, isMain) {
             `;
         }
         return `
-            <div class="audio-player-ui">
+            <div class="audio-player-ui glitch-box-strong">
                 <img class="audio-cover" src="${media.fallback_image || ''}" alt="Cover">
                 <div class="audio-controls">
                     <button class="audio-play-btn" id="audio-play-btn">[ PLAY ]</button>
