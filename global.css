@@ -931,7 +931,7 @@ h3 {
 .glitch-box {
     position: relative;
     overflow: hidden;
-    animation: tvFlicker 6s infinite alternate;
+    animation: tvFlicker 3s infinite alternate;
 }
 
 .glitch-box::before {
