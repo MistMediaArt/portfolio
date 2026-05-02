@@ -370,7 +370,7 @@ h3 {
 .side-panel {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     border-left: 1px solid var(--grid-line-color);
     padding-left: 2rem;
     position: sticky;
