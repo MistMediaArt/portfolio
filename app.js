@@ -298,12 +298,14 @@ function renderContent() {
                 </div>
                 
                 <div class="side-panel">
-                    <div class="panel-header">
-                        <h2>MEDIA ARTIST /<br>VFX PROFESSIONAL</h2>
-                    </div>
-                    
-                    <div class="system-status">
-                        SYSTEM STATUS: <span class="status-operational">${activeProject.status || 'OPERATIONAL'}</span>
+                    <div>
+                        <div class="panel-header">
+                            <h2>MEDIA ARTIST /<br>VFX PROFESSIONAL</h2>
+                        </div>
+                        
+                        <div class="system-status">
+                            SYSTEM STATUS: <span class="status-operational">${activeProject.status || 'OPERATIONAL'}</span>
+                        </div>
                     </div>
 
                     ${activeProject.content && activeProject.content.links ? `
