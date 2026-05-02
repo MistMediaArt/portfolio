@@ -55,8 +55,14 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(18, 18, 18, 0.85); /* var(--bg-color) with opacity */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
 }
 
 .header-logo {
@@ -102,8 +108,12 @@ h3 {
     padding: 0 2rem 1.5rem 2rem;
     display: flex;
     gap: 1.5rem;
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 4.5rem;
+    z-index: 999;
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .sub-nav button {
