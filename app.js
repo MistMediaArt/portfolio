@@ -298,6 +298,12 @@ function renderContent() {
 
                     ${carouselHTML}
 
+                    ${activeProject.content && activeProject.content.sidebar_html ? `
+                        <div class="sidebar-text-block" style="margin-top: 1rem; font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                            ${activeProject.content.sidebar_html}
+                        </div>
+                    ` : ''}
+
                     ${activeSection === 'music' ? `
                     <div class="cs-links" style="margin-top: 1rem;">
                         <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ SOUNDCLOUD ]</span></a>
