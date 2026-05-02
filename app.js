@@ -316,25 +316,27 @@ function renderContent() {
 
                     ${carouselHTML}
 
-                    ${activeProject.content && activeProject.content.sidebar_html ? `
-                        <div class="desktop-only-sidebar-content sidebar-text-block">
-                            ${activeProject.content.sidebar_html}
-                        </div>
-                    ` : ''}
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        ${activeProject.content && activeProject.content.sidebar_html ? `
+                            <div class="desktop-only-sidebar-content sidebar-text-block">
+                                ${activeProject.content.sidebar_html}
+                            </div>
+                        ` : ''}
 
-                    ${activeSection === 'music' ? `
-                    <div class="cs-links" style="margin-top: 1rem;">
-                        <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ SOUNDCLOUD ]</span></a>
+                        ${activeSection === 'music' ? `
+                        <div class="cs-links" style="margin-top: 0;">
+                            <a href="https://soundcloud.com/low-fi-saints-are-decoded" target="_blank" class="cs-link-btn"><span class="btn-arrow">>></span> <span class="btn-text">[ SOUNDCLOUD ]</span></a>
+                        </div>
+                        ` : ''}
+                        
+                        ${activeProject.metadata ? `
+                        <div class="desktop-only-sidebar-content metadata-grid">
+                            ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
+                                <div>${k.toUpperCase().replace('_', ' ')}<span>${v}</span></div>
+                            `).join('')}
+                        </div>
+                        ` : ''}
                     </div>
-                    ` : ''}
-                    
-                    ${activeProject.metadata ? `
-                    <div class="desktop-only-sidebar-content metadata-grid">
-                        ${Object.entries(activeProject.metadata || {}).map(([k, v]) => `
-                            <div>${k.toUpperCase().replace('_', ' ')}<span>${v}</span></div>
-                        `).join('')}
-                    </div>
-                    ` : ''}
                 </div>
             </div>
         `;
