@@ -729,4 +729,15 @@ body::after {
         white-space: nowrap;
         letter-spacing: 0;
     }
+
+    /* Mobile AI Section Reordering */
+    .featured-layout[data-section="ai"] .system-status { order: 1; }
+    .featured-layout[data-section="ai"] .cs-links { order: 2; }
+    .featured-layout[data-section="ai"] .carousel-container { order: 3; }
+    .featured-layout[data-section="ai"] .panel-header { order: 4; }
+    .featured-layout[data-section="ai"] .metadata-grid { order: 5; }
+    
+    .featured-layout[data-section="ai"] .panel-header h2 {
+        font-size: 1.2rem;
+    }
 }

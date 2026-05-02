@@ -188,7 +188,7 @@ function renderContent() {
 
     if (activeProject.template === 'case_study') {
         featuredHTML = `
-            <div class="featured-layout case-study-layout">
+            <div class="featured-layout case-study-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
                     <div class="main-video-wrapper" style="aspect-ratio: auto; min-height: 400px; background: none;">
                         <img src="${activeProject.media.fallback_image}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
@@ -255,7 +255,7 @@ function renderContent() {
         const wrapperClass = isImage ? 'image-placeholder' : (isVertical ? 'vertical-placeholder' : '');
         
         featuredHTML = `
-            <div class="featured-layout">
+            <div class="featured-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
                     <div class="main-video-wrapper ${wrapperClass}" id="main-video-wrapper">
                         ${getMediaHTML(activeProject.media, true)}
