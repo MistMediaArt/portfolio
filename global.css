@@ -814,12 +814,32 @@ h3 {
     margin-bottom: 1rem;
 }
 
+/* Sidebar Responsive Display Logic */
+.mobile-only-sidebar-content {
+    display: none;
+}
+
+.desktop-only-sidebar-content {
+    display: block;
+}
+
 /* Mobile Protocol */
 @media (max-width: 1024px) {
     .featured-layout {
         grid-template-columns: 1fr;
         padding: 0 1.5rem;
         gap: 2rem;
+    }
+
+    .mobile-only-sidebar-content {
+        display: block;
+        margin-bottom: 2rem;
+        border-bottom: 1px dashed var(--grid-line-color);
+        padding-bottom: 2rem;
+    }
+
+    .desktop-only-sidebar-content {
+        display: none;
     }
 
     .side-panel {

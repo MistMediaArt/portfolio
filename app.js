@@ -272,6 +272,11 @@ function renderContent() {
                         ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
                     <h1 class="main-title" style="margin-top: 2rem;">${activeProject.title}</h1>
+                    ${activeProject.content && activeProject.content.sidebar_html ? `
+                        <div class="mobile-only-sidebar-content case-study-content" style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                            ${activeProject.content.sidebar_html}
+                        </div>
+                    ` : ''}
                     ${activeProject.content && activeProject.content.html_body ? `
                         <div class="project-html-body case-study-content" style="display: block; margin-top: 2rem; max-width: 800px;">
                             ${activeProject.content.html_body}
@@ -299,7 +304,7 @@ function renderContent() {
                     ${carouselHTML}
 
                     ${activeProject.content && activeProject.content.sidebar_html ? `
-                        <div class="sidebar-text-block" style="margin-top: 1rem; font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        <div class="desktop-only-sidebar-content sidebar-text-block" style="margin-top: 1rem; font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
                             ${activeProject.content.sidebar_html}
                         </div>
                     ` : ''}
