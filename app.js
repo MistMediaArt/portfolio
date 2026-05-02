@@ -271,7 +271,12 @@ function renderContent() {
                         ${getMediaHTML(activeProject.media, true)}
                         ${(!isImage && !isAudio) ? '<button class="fullscreen-btn" id="fullscreen-btn">[ FULLSCREEN ]</button>' : ''}
                     </div>
-                    <h1 class="main-title">${activeProject.title}</h1>
+                    <h1 class="main-title" style="margin-top: 2rem;">${activeProject.title}</h1>
+                    ${activeProject.content && activeProject.content.html_body ? `
+                        <div class="project-html-body case-study-content" style="display: block; margin-top: 2rem; max-width: 800px;">
+                            ${activeProject.content.html_body}
+                        </div>
+                    ` : ''}
                 </div>
                 
                 <div class="side-panel">
