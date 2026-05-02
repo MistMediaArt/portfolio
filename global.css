@@ -247,6 +247,7 @@ h3 {
     position: sticky;
     top: 6rem; /* Keeps it under the header */
     height: fit-content;
+    align-self: start;
 }
 
 .main-video-wrapper {
