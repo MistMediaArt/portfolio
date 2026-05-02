@@ -963,18 +963,18 @@ h3 {
 @keyframes tvFlicker {
     0%, 96%, 98%, 100% { 
         opacity: 1; 
-        transform: translate(0, 0);
+        transform: translate(0, 0) skewX(0);
         text-shadow: none; 
     }
     97% { 
-        opacity: 0.85; 
-        transform: translate(1px, -1px);
-        text-shadow: 2px 0px 1px rgba(255, 0, 0, 0.4), -2px 0px 1px rgba(0, 255, 255, 0.4); 
+        opacity: 0.75; 
+        transform: translate(2px, -1px) skewX(1deg);
+        text-shadow: 4px 0px 1px rgba(255, 0, 0, 0.7), -4px 0px 1px rgba(0, 255, 255, 0.7); 
     }
     99% { 
-        opacity: 0.95; 
-        transform: translate(-1px, 0);
-        text-shadow: -1px 0px 1px rgba(255, 0, 0, 0.4), 1px 0px 1px rgba(0, 255, 255, 0.4); 
+        opacity: 0.9; 
+        transform: translate(-2px, 1px) skewX(-1deg);
+        text-shadow: -2px 0px 1px rgba(255, 0, 0, 0.7), 2px 0px 1px rgba(0, 255, 255, 0.7); 
     }
 }
 
