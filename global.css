@@ -370,13 +370,22 @@ h3 {
 .side-panel {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
     border-left: 1px solid var(--grid-line-color);
     padding-left: 2rem;
     position: sticky;
     top: 6rem;
     align-self: start;
     min-width: 0;
+}
+
+/* Override spacing specifically for Motion Graphics side panel */
+.featured-layout[data-section="motion_graphics"] .side-panel {
+    gap: 0.5rem;
+}
+
+.featured-layout[data-section="motion_graphics"] .desktop-only-sidebar-content {
+    margin-top: 0 !important;
 }
 
 /* Decor line out from side panel */
