@@ -926,6 +926,33 @@ h3 {
 }
 
 /* =========================================
+   Contact Directory Responsive Block
+   ========================================= */
+.contact-directory-block {
+    /* No inline padding/font-size here since we want responsive classes to handle it, but we can set base values */
+}
+
+@media (max-width: 1024px) {
+    .contact-directory-block {
+        padding: 1rem 0.5rem !important;
+    }
+    .contact-directory-block .contact-heading {
+        font-size: 0.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .contact-directory-block .contact-content {
+        font-size: 0.85rem !important;
+    }
+    .contact-directory-block .contact-item {
+        margin-top: 0.85rem !important;
+    }
+    .contact-directory-block .contact-label {
+        font-size: 0.65rem !important;
+    }
+}
+
+
+/* =========================================
    Subtle TV Glitch / Scanline Effect
    ========================================= */
 .glitch-box {
