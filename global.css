@@ -203,7 +203,7 @@ h1, h2, h3 {
 /* Image Placeholder Style for Biography/About */
 .main-video-wrapper.image-placeholder {
     aspect-ratio: auto;
-    height: 400px;
+    height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
