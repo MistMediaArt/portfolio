@@ -600,17 +600,65 @@ h3 {
 
 /* Case Study Template */
 .cs-gallery-container {
-    max-height: 75vh;
-    overflow-y: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
     gap: 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    align-items: center;
 }
 
 .cs-gallery-container::-webkit-scrollbar {
     display: none;
+}
+
+.cs-gallery-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+    border: 1px solid var(--grid-line-color);
+    scroll-snap-align: center;
+}
+
+.cs-gallery-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-main);
+    border: 1px solid var(--grid-line-color);
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s;
+    font-family: var(--font-mono);
+    backdrop-filter: blur(4px);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.cs-gallery-scroll-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    opacity: 1;
+}
+
+.cs-gallery-scroll-btn.left {
+    left: 1.5rem;
+}
+
+.cs-gallery-scroll-btn.right {
+    right: 1.5rem;
 }
 
 .case-study-content {

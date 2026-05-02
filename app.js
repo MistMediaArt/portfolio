@@ -190,12 +190,16 @@ function renderContent() {
         featuredHTML = `
             <div class="featured-layout case-study-layout" data-section="${activeSection}">
                 <div class="main-viewer-container">
-                    <div class="main-video-wrapper" style="aspect-ratio: auto; background: none; padding: 1rem;">
-                        <div class="cs-gallery-container">
+                    <div class="main-video-wrapper" style="aspect-ratio: auto; background: none; padding: 1rem; position: relative;">
+                        ${activeProject.media.gallery && activeProject.media.gallery.length > 1 ? `
+                        <button class="cs-gallery-scroll-btn left" id="cs-gallery-left">&lt;</button>
+                        <button class="cs-gallery-scroll-btn right" id="cs-gallery-right">&gt;</button>
+                        ` : ''}
+                        <div class="cs-gallery-container" id="cs-gallery-container">
                             ${activeProject.media.gallery ? activeProject.media.gallery.map(img => `
-                                <img src="${img}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
+                                <img src="${img}" alt="Case Study Image" class="cs-gallery-item">
                             `).join('') : `
-                                <img src="${activeProject.media.fallback_image}" alt="Case Study Image" style="width: 100%; height: auto; object-fit: contain; border: 1px solid var(--grid-line-color);">
+                                <img src="${activeProject.media.fallback_image}" alt="Case Study Image" class="cs-gallery-item">
                             `}
                         </div>
                     </div>
@@ -444,6 +448,28 @@ function renderContent() {
             carouselWrapper.scrollLeft = scrollLeft - walk;
         });
         carouselWrapper.style.cursor = 'grab';
+    }
+
+    // Case Study Gallery Scroll Logic
+    const csGalleryContainer = document.getElementById('cs-gallery-container');
+    const csGalleryLeft = document.getElementById('cs-gallery-left');
+    const csGalleryRight = document.getElementById('cs-gallery-right');
+
+    if (csGalleryContainer && csGalleryLeft && csGalleryRight) {
+        csGalleryLeft.addEventListener('click', () => {
+            const firstItem = csGalleryContainer.querySelector('.cs-gallery-item');
+            if(firstItem) {
+                const itemWidth = firstItem.offsetWidth + 16; // 1rem gap
+                csGalleryContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            }
+        });
+        csGalleryRight.addEventListener('click', () => {
+            const firstItem = csGalleryContainer.querySelector('.cs-gallery-item');
+            if(firstItem) {
+                const itemWidth = firstItem.offsetWidth + 16; // 1rem gap
+                csGalleryContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
+        });
     }
 }
 
