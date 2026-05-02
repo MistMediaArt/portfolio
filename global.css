@@ -934,37 +934,35 @@ h3 {
 }
 
 .contact-directory-block .contact-heading {
-    font-size: 0.85rem !important;
+    font-size: 0.75rem !important;
 }
 
 .contact-directory-block .contact-content {
-    font-size: 0.9rem !important;
+    font-size: 0.75rem !important;
 }
 
 .contact-directory-block .contact-value {
-    font-size: 0.85rem !important;
+    font-size: 0.75rem !important;
     word-break: break-all;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .contact-directory-block {
         padding: 1rem 0.5rem !important;
     }
     .contact-directory-block .contact-heading {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         margin-bottom: 1rem !important;
     }
-    .contact-directory-block .contact-content {
-        font-size: 0.75rem !important;
-    }
+    .contact-directory-block .contact-content,
     .contact-directory-block .contact-value {
-        font-size: 0.75rem !important;
+        font-size: 0.65rem !important;
     }
     .contact-directory-block .contact-item {
-        margin-top: 0.85rem !important;
+        margin-top: 0.75rem !important;
     }
     .contact-directory-block .contact-label {
-        font-size: 0.6rem !important;
+        font-size: 0.55rem !important;
     }
 }
 
