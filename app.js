@@ -31,6 +31,7 @@ async function initTerminal() {
         
         renderNav();
         renderContent();
+        initVideoModal();
         
         await bootPromise;
     } catch (error) {
@@ -603,6 +604,38 @@ function getMediaHTML(media, isMain) {
     else {
         return `<img src="${media.fallback_image || ''}" alt="Media">`;
     }
+}
+
+// Generative Video Modal Logic
+function initVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video-player');
+    const closeBtn = document.getElementById('close-modal-btn');
+    
+    if (!modal || !modalVideo) return;
+
+    // Listen for clicks on the generative grid videos
+    document.body.addEventListener('click', (e) => {
+        if (e.target.matches('.generative-video-grid video')) {
+            const src = e.target.getAttribute('src');
+            if (src) {
+                modalVideo.src = src;
+                modal.style.display = 'flex';
+                modalVideo.play().catch(err => console.error("Autoplay prevented:", err));
+            }
+        }
+    });
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        modalVideo.pause();
+        modalVideo.src = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal(); // Click outside the video
+    });
 }
 
 // Boot Sequence Animation
