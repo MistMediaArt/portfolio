@@ -527,25 +527,23 @@ function getMediaHTML(media, isMain) {
         if (!isMain) {
             // YouTube doesn't support clean background autoplay (forces UI and play button).
             // So we extract the thumbnail image for YouTube.
-            if (media.url.includes('youtube.com/embed/')) {
+            if (media.url.includes('youtube.com/embed/') || media.url.includes('vimeo.com')) {
                 let thumbUrl = media.fallback_image;
                 if (!thumbUrl) {
-                    const videoId = media.url.split('embed/')[1].split('?')[0];
-                    thumbUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                    if (media.url.includes('youtube.com/embed/')) {
+                        const videoId = media.url.split('embed/')[1].split('?')[0];
+                        thumbUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                    } else if (media.url.includes('vimeo.com')) {
+                        const vimeoMatch = media.url.match(/video\/(\d+)/);
+                        const videoId = vimeoMatch ? vimeoMatch[1] : '';
+                        thumbUrl = `https://vumbnail.com/${videoId}.jpg`;
+                    }
                 }
                 return `
                     <img src="${thumbUrl}" alt="Thumbnail">
                     <div class="custom-play-icon">▶</div>
                 `;
             }
-            
-            // Vimeo supports clean background autoplay, so we use it for moving thumbnails!
-            let thumbIframeUrl = finalUrl;
-            if (thumbIframeUrl.includes('vimeo.com')) {
-                const separator = thumbIframeUrl.includes('?') ? '&' : '?';
-                thumbIframeUrl += `${separator}background=1&muted=1&loop=1&autoplay=1`;
-            }
-            return `<div style="position: relative; width: 100%; height: 100%; pointer-events: none;"><iframe src="${thumbIframeUrl}" frameborder="0" tabindex="-1" style="width: 100%; height: 100%; pointer-events: none;"></iframe></div>`;
         }
         
         // Main Viewer Iframe
